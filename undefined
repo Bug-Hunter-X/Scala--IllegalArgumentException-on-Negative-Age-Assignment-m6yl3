@@ -1,0 +1,17 @@
+```scala
+class MyClass(val name: String) {
+  private var _age: Int = 0
+
+  def age: Int = _age
+  def age_=(newAge: Int): Unit = {
+    _age = Math.max(0, newAge) //Use max to ensure age isn't negative
+  }
+}
+
+object Main extends App {
+  val myInstance = new MyClass("John")
+  println(myInstance.age) //prints 0
+  myInstance.age = -5 //Sets age to 0
+  println(myInstance.age) //prints 0
+}
+```
